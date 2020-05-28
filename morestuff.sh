@@ -3,6 +3,13 @@
 # stuff
 sudo apt install python3 python3-pip glances -y
 
+# swap
+sudo fallocate -l 2G /swapfile
+sudo chmod 600 /swapfile
+sudo mkswap /swapfile
+sudo swapon /swapfile
+sudo echo '/swapfile swap swap defaults 0 0' >> /etc/fstab
+
 # docker https://docs.docker.com/engine/install/ubuntu/
 sudo apt install \
     apt-transport-https \
