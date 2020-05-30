@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # stuff
-sudo apt install python3 python3-pip glances -y
+sudo apt install python3 python3-pip glances zip unzip zstd -y
 
 # swap
 sudo fallocate -l 2G /swapfile
@@ -25,3 +25,5 @@ sudo add-apt-repository \
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io -y
 sudo usermod -aG docker $USER
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
